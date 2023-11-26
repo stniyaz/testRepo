@@ -1,0 +1,47 @@
+﻿@model List<Book>
+@{
+    var counter = 0;
+}
+<div class="container-fluid justify-content-between align-items-center row">
+    <h1>Book Page</h1>
+    <a asp-action="create" asp-controller="book" class="btn btn-primary">Create</a>
+
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Tax</th>
+                    <th scope="col">CostPrice</th>
+                    <th scope="col">SalePrice</th>
+                    <th scope="col">DiscountedPrice</th>
+                    <th scope="col">IsAvailable</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@book.Code</td>
+                        <td>@book.Name</td>
+                        <td>@book.Tax</td>
+                        <td>@book.CostPrice</td>
+                        <td>@book.SalePrice</td>
+                        <td>@book.DiscountedPrice</td>
+                        <td>@book.IsAvailable</td>
+                        <td>
+                            <a asp-action="update" asp-controller="book" asp-route-id="@book.Id" class="btn btn-success">Update</a>
+                            <a asp-action="delete" asp-controller="book" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

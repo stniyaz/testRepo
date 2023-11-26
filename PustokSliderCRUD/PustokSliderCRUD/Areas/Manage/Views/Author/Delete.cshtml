@@ -1,0 +1,16 @@
+﻿@model Author
+<div class="container-fluid align-items-center justify-content-between row">
+    <h1>Delete Page</h1>
+    <a asp-action="index" asp-controller="author" class="btn btn-primary">Go Back</a>
+</div>
+<div class="container-fluid">
+    <form method="post">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Author name:</h5>
+                <p class="card-text">@Model.Fullname</p>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>

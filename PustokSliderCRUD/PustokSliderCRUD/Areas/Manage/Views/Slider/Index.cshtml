@@ -1,0 +1,45 @@
+﻿@model List<Slider>
+@{
+    var counter = 0;
+}
+<div class="container-fluid justify-content-between align-items-center row">
+    <h1>Slider Page</h1>
+    <a asp-action="create" asp-controller="slider" class="btn btn-primary">Create</a>
+
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">UpperText</th>
+                    <th scope="col">LowerText</th>
+                    <th scope="col">RedirectUrl</th>
+                    <th scope="col">RedirectText</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var slider in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@slider.UpperText</td>
+                        <td>@slider.LowerText</td>
+                        <td>@slider.RedirectUrl</td>
+                        <td>@slider.RedirectText</td>
+                        <td>
+                            <img style="max-width: 30%; max-height: 30%" src="~/manage/upload/sliders/@slider.Image">
+                        </td>
+                        <td>
+                            <a asp-action="update" asp-controller="slider" asp-route-id="@slider.Id" class="btn btn-success">Update</a>
+                            <a asp-action="delete" asp-controller="slider" asp-route-id="@slider.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

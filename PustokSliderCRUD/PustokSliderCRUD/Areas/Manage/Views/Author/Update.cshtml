@@ -1,0 +1,15 @@
+﻿@model Author
+<div class="row align-items-center justify-content-between container-fluid">
+    <h1>Update Page</h1>
+    <a asp-action="index" asp-controller="author" class="btn btn-primary">Go Back</a>
+</div>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data" class="row align-items-center">
+        <div class="form-group col-md-4">
+            <label for="">Fullname</label>
+            <input asp-for="Fullname" type="text" class="form-control">
+            <span asp-validation-for="Fullname"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

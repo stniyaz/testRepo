@@ -1,0 +1,36 @@
+﻿@model Slider
+<div class="row align-items-center justify-content-between container-fluid">
+    <h1>Create Page</h1>
+    <a asp-action="index" asp-controller="slider" class="btn btn-primary">Go Back</a>
+</div>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data" class="row align-items-center">
+        <div class="form-group col-md-4">
+            <label for="">UpperText</label>
+            <input asp-for="UpperText" type="text" class="form-control">
+            <span asp-validation-for="UpperText"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">LowerText</label>
+            <input asp-for="LowerText" type="text" class="form-control">
+            <span asp-validation-for="LowerText"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">RedirectUrl</label>
+            <input asp-for="RedirectUrl" type="text" class="form-control">
+            <span asp-validation-for="RedirectUrl"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">RedirectText</label>
+            <input asp-for="RedirectText" type="text" class="form-control">
+            <span asp-validation-for="RedirectText"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">ImageFile</label>
+            <input asp-for="ImageFile" class="form-control">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
