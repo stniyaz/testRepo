@@ -1,0 +1,17 @@
+﻿@model Product
+<div class="container-fluid align-items-center justify-content-between row">
+    <h1>Delete Page</h1>
+    <a asp-action="index" asp-controller="product" class="btn btn-primary">Go Back</a>
+</div>
+<form method="post">
+    <div class="container-fluid">
+        <div class="card" style="width: 18rem;">
+            <img src="~/manage/upload/sliders/" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text">@Model.Description</p>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</form>
